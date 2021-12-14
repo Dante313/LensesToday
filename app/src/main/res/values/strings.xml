@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LensesToday</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_lenses">Добавить линзы</string>
+    <string name="delete_lenses">Удалить линзы</string>
+    <string name="input_lenses_title">Название линз</string>
+    <string name="input_replacement_period">Срок замены</string>
+    <string name="input_lenses_already_wear">Уже носил</string>
+    <string name="create_lenses">Создать</string>
+    <string name="cancel_creation">Отменить</string>
+</resources>
