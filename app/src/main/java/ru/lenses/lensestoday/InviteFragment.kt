@@ -17,9 +17,8 @@ class InviteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentInviteBinding.inflate(inflater)
-        (activity as AppCompatActivity).apply {
-            setSupportActionBar(binding.toolbarInvite)
-        }
+
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
         setHasOptionsMenu(true)
 
         return binding.root

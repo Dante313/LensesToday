@@ -16,9 +16,8 @@ class MainLensesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentMainLensesBinding.inflate(inflater)
-        (activity as AppCompatActivity).apply {
-            setSupportActionBar(binding.toolbarDelete)
-        }
+
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
         setHasOptionsMenu(true)
 
         return binding.root

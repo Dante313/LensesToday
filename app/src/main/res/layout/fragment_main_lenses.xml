@@ -6,20 +6,4 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainLensesFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar_delete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_delete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:menu="@menu/delete_menu"/>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
