@@ -8,4 +8,7 @@
     <string name="input_lenses_already_wear">Уже носил</string>
     <string name="create_lenses">Создать</string>
     <string name="cancel_creation">Отменить</string>
+    <string name="main_menu">Главное меню</string>
+    <string name="lenses_today">Линзы сегодня</string>
+    <string name="press_button_to_add_new_lenses">Линзы ещё не добавлены.\nНажмите \"+\" чтобы добавить новые линзы</string>
 </resources>

@@ -1,4 +1,4 @@
-package ru.lenses.lensestoday
+package ru.lenses.lensestoday.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
+import ru.lenses.lensestoday.R
 import ru.lenses.lensestoday.databinding.FragmentAddLensesBinding
 
 class AddLensesFragment : Fragment() {

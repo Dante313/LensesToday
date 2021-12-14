@@ -1,9 +1,10 @@
-package ru.lenses.lensestoday
+package ru.lenses.lensestoday.ui.fragments
 
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import ru.lenses.lensestoday.R
 import ru.lenses.lensestoday.databinding.FragmentMainLensesBinding
 
 

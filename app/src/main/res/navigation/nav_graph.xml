@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/inviteFragment"
-        android:name="ru.lenses.lensestoday.InviteFragment"
-        android:label="fragment_invite"
+        android:name="ru.lenses.lensestoday.ui.fragments.InviteFragment"
+        android:label="@string/main_menu"
         tools:layout="@layout/fragment_invite" >
         <action
             android:id="@+id/action_inviteFragment_to_addLensesFragment"
@@ -16,8 +16,8 @@
     </fragment>
     <fragment
         android:id="@+id/addLensesFragment"
-        android:name="ru.lenses.lensestoday.AddLensesFragment"
-        android:label="fragment_add_lenses"
+        android:name="ru.lenses.lensestoday.ui.fragments.AddLensesFragment"
+        android:label="@string/add_lenses"
         tools:layout="@layout/fragment_add_lenses" >
         <action
             android:id="@+id/action_addLensesFragment_to_mainLensesFragment"
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainLensesFragment"
-        android:name="ru.lenses.lensestoday.MainLensesFragment"
-        android:label="fragment_main_lenses"
+        android:name="ru.lenses.lensestoday.ui.fragments.MainLensesFragment"
+        android:label="@string/lenses_today"
         tools:layout="@layout/fragment_main_lenses" />
 </navigation>

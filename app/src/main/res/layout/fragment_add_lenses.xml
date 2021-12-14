@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddLensesFragment">
+    tools:context=".ui.fragments.AddLensesFragment">
 
     <ImageView
         android:id="@+id/image_laying_lens"
@@ -69,7 +69,8 @@
             android:id="@+id/edit_text_lenses_already_wearing"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/input_lenses_already_wear" />
+            android:hint="@string/input_lenses_already_wear"
+            android:inputType="numberDecimal" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
