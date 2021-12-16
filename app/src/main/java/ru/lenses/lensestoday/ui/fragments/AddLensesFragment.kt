@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
 import ru.lenses.lensestoday.R
 import ru.lenses.lensestoday.databinding.FragmentAddLensesBinding
@@ -68,5 +69,18 @@ class AddLensesFragment : Fragment() {
                 lensesAlreadyWear = 3
             )
         )
+    }
+
+    private fun validateLensesInput() {
+        binding.textInputLensesTitle.error = null
+        binding.textInputLensesAlreadyWearing.error = null
+
+        if (binding.editTextLensesTitle.text.isNullOrBlank()) {
+            binding.textInputLensesTitle.apply {
+                requestFocus()
+                error = getString(R.string.empty_input_error)
+            }
+        }
+        //TODO: проверка ввода количества дней
     }
 }

@@ -29,6 +29,8 @@
             android:id="@+id/edit_text_lenses_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:inputType="text"
+            android:maxLines="1"
             android:hint="@string/input_lenses_title" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -70,7 +72,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/input_lenses_already_wear"
-            android:inputType="numberDecimal" />
+            android:maxLines="1"
+            android:inputType="number|none" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

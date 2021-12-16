@@ -11,4 +11,5 @@
     <string name="main_menu">Главное меню</string>
     <string name="lenses_today">Линзы сегодня</string>
     <string name="press_button_to_add_new_lenses">Линзы ещё не добавлены.\nНажмите \"+\" чтобы добавить новые линзы</string>
+    <string name="empty_input_error">Поле не должно быть пустым!</string>
 </resources>
