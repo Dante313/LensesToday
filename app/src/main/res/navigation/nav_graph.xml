@@ -27,5 +27,9 @@
         android:id="@+id/mainLensesFragment"
         android:name="ru.lenses.lensestoday.ui.fragments.MainLensesFragment"
         android:label="@string/lenses_today"
-        tools:layout="@layout/fragment_main_lenses" />
+        tools:layout="@layout/fragment_main_lenses" >
+        <action
+            android:id="@+id/action_mainLensesFragment_to_inviteFragment"
+            app:destination="@id/inviteFragment" />
+    </fragment>
 </navigation>

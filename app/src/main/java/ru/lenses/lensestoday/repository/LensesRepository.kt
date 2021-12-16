@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class LensesRepository @Inject constructor(private val lensesDao: LensesDao) {
 
-    suspend fun readLenses() = lensesDao.readLenses()
+    fun readLenses() = lensesDao.readLenses()
 
     suspend fun addLenses(lenses: Lenses) = lensesDao.addLenses(lenses)
 

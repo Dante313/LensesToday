@@ -39,8 +39,10 @@ class AddLensesFragment : Fragment() {
         }
 
         binding.btnCreateLenses.setOnClickListener {
-            createNewLenses()
-            findNavController().navigate(R.id.action_addLensesFragment_to_mainLensesFragment)
+            if (validateLensesInput()) {
+                createNewLenses()
+                findNavController().navigate(AddLensesFragmentDirections.actionAddLensesFragmentToMainLensesFragment())
+            }
         }
     }
 
@@ -64,23 +66,24 @@ class AddLensesFragment : Fragment() {
         val lensesAlreadyWear = binding.editTextLensesAlreadyWearing.text.toString().toInt()
         viewModel.addLenses(
             Lenses(
-                lensesTitle = "lensesTitle",
-                lensesReplacePeriod = 14,
-                lensesAlreadyWear = 3
+                lensesTitle = lensesTitle,
+                lensesReplacePeriod = lensesReplacePeriod,
+                lensesAlreadyWear = lensesAlreadyWear
             )
         )
     }
 
-    private fun validateLensesInput() {
+    private fun validateLensesInput(): Boolean {
         binding.textInputLensesTitle.error = null
         binding.textInputLensesAlreadyWearing.error = null
 
-        if (binding.editTextLensesTitle.text.isNullOrBlank()) {
+        return if (binding.editTextLensesTitle.text.isNullOrBlank()) {
             binding.textInputLensesTitle.apply {
                 requestFocus()
                 error = getString(R.string.empty_input_error)
             }
-        }
+            false
+        } else true
         //TODO: проверка ввода количества дней
     }
 }

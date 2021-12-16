@@ -73,7 +73,8 @@
             android:layout_height="match_parent"
             android:hint="@string/input_lenses_already_wear"
             android:maxLines="1"
-            android:inputType="number|none" />
+            android:maxLength="2"
+            android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

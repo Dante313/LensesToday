@@ -1,5 +1,6 @@
 package ru.lenses.lensestoday.room
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
@@ -18,5 +19,5 @@ interface LensesDao {
     suspend fun deleteAllLenses()
 
     @Query("SELECT * FROM lenses")
-    suspend fun readLenses(): Lenses
+    fun readLenses(): LiveData<Lenses>
 }
