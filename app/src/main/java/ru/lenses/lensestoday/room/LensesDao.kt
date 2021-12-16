@@ -18,5 +18,5 @@ interface LensesDao {
     suspend fun deleteAllLenses()
 
     @Query("SELECT * FROM lenses")
-    fun readLenses(): Lenses
+    suspend fun readLenses(): Lenses
 }

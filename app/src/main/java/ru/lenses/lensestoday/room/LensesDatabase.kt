@@ -15,25 +15,6 @@ abstract class LensesDatabase() : RoomDatabase() {
     abstract fun lensesDao(): LensesDao
 
     companion object {
-        @Volatile
-        private var INSTANCE: LensesDatabase? = null
-
-        fun getDatabase(context: Context): LensesDatabase {
-            val tempInstance = INSTANCE
-            if(tempInstance != null) {
-                return tempInstance
-            }
-            synchronized(this) {
-                val instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    LensesDatabase::class.java,
-                    DATABASE_NAME
-                ).build()
-                INSTANCE = instance
-                return instance
-            }
-        }
-
-        private const val DATABASE_NAME = "lenses_database"
+        const val DATABASE_NAME = "lenses_database"
     }
 }

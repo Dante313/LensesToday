@@ -2,10 +2,11 @@ package ru.lenses.lensestoday.repository
 
 import ru.lenses.lensestoday.room.Lenses
 import ru.lenses.lensestoday.room.LensesDao
+import javax.inject.Inject
 
-class LensesRepository(private val lensesDao: LensesDao) {
+class LensesRepository @Inject constructor(private val lensesDao: LensesDao) {
 
-    val readLenses = lensesDao.readLenses()
+    suspend fun readLenses() = lensesDao.readLenses()
 
     suspend fun addLenses(lenses: Lenses) = lensesDao.addLenses(lenses)
 
