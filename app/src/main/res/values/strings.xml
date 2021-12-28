@@ -6,6 +6,9 @@
     <string name="input_lenses_title">Название линз</string>
     <string name="input_replacement_period">Срок замены</string>
     <string name="input_lenses_already_wear">Уже носил</string>
+    <string name="lenses_name">Название: %1$s</string>
+    <string name="replacement_period">Срок замены: %1$d</string>
+    <string name="already_wear">Уже носил: %1$d</string>
     <string name="create_lenses">Создать</string>
     <string name="cancel_creation">Отменить</string>
     <string name="main_menu">Главное меню</string>
@@ -13,4 +16,8 @@
     <string name="press_button_to_add_new_lenses">Линзы ещё не добавлены.\nНажмите \"+\" чтобы добавить новые линзы</string>
     <string name="empty_input_error">Поле не должно быть пустым!</string>
     <string name="new_lenses">Новые линзы</string>
+    <string name="deleting_lenses">Удаление линз</string>
+    <string name="are_you_want_to_delete_lenses">Вы уверены что хотите удалить линзы?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
 </resources>

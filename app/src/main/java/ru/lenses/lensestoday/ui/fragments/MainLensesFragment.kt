@@ -1,8 +1,10 @@
 package ru.lenses.lensestoday.ui.fragments
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -10,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import ru.lenses.lensestoday.R
 import ru.lenses.lensestoday.databinding.FragmentMainLensesBinding
+import ru.lenses.lensestoday.model.WearingProgress
 
 @AndroidEntryPoint
 class MainLensesFragment : Fragment() {
@@ -32,9 +35,17 @@ class MainLensesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.readLensesLiveData.observe(viewLifecycleOwner) { lenses ->
-            binding.tvLensesTitle.text = lenses.lensesTitle
-            binding.tvLensesReplacePeriod.text = lenses.lensesReplacePeriod.toString()
-            binding.tvLensesAlreadyWear.text = lenses.lensesAlreadyWear.toString()
+            lenses?.let {
+                binding.tvLensesTitle.text = getString(R.string.lenses_name, lenses.lensesTitle)
+                binding.tvLensesReplacePeriod.text = getString(R.string.replacement_period, lenses.lensesReplacePeriod)
+                binding.tvLensesAlreadyWear.text = getString(R.string.already_wear, lenses.lensesAlreadyWear)
+
+                viewModel.countWearingProgress(lenses.lensesReplacePeriod, lenses.lensesAlreadyWear)
+            } ?: findNavController().navigate(R.id.action_mainLensesFragment_to_inviteFragment)
+        }
+
+        viewModel.wearingProgressLiveData.observe(viewLifecycleOwner) { wearingProgress ->
+            setWearingProgress(wearingProgress)
         }
     }
 
@@ -44,10 +55,43 @@ class MainLensesFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.delete_lenses) {
-            viewModel.deleteAllLenses()
-            findNavController().navigate(R.id.action_mainLensesFragment_to_inviteFragment)
+            createDeleteLensesDialog()
         }
         return super.onOptionsItemSelected(item)
     }
 
+    private fun createDeleteLensesDialog() {
+        AlertDialog.Builder(requireActivity())
+            .setTitle(getString(R.string.deleting_lenses))
+            .setMessage(getString(R.string.are_you_want_to_delete_lenses))
+            .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                viewModel.deleteAllLenses()
+                findNavController().navigate(R.id.action_mainLensesFragment_to_inviteFragment)
+            }
+            .setNegativeButton(getString(R.string.no)) { _, _ -> }
+            .show()
+    }
+
+    private fun setWearingProgress(wearingProgress: WearingProgress) {
+        binding.pbWearingProgress.apply {
+            max = wearingProgress.maxDays
+            progress = wearingProgress.leftDays
+            progressTintList = ColorStateList.valueOf(
+                when {
+                    wearingProgress.percentLeft <= 5 -> {
+                        binding.imgLensStatus.setImageResource(R.drawable.lens_dead)
+                        Color.RED
+                    }
+                    wearingProgress.percentLeft in 6..50 -> {
+                        binding.imgLensStatus.setImageResource(R.drawable.lens_damaged)
+                        Color.YELLOW
+                    }
+                    else -> {
+                        binding.imgLensStatus.setImageResource(R.drawable.lens_new)
+                        Color.GREEN
+                    }
+                }
+            )
+        }
+    }
 }
