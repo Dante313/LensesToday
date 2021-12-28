@@ -14,15 +14,17 @@
             android:id="@+id/action_inviteFragment_to_addLensesFragment"
             app:destination="@id/addLensesFragment" />
     </fragment>
-    <fragment
+    <dialog
         android:id="@+id/addLensesFragment"
         android:name="ru.lenses.lensestoday.ui.fragments.AddLensesFragment"
         android:label="@string/add_lenses"
         tools:layout="@layout/fragment_add_lenses" >
         <action
             android:id="@+id/action_addLensesFragment_to_mainLensesFragment"
+            app:popUpTo="@id/inviteFragment"
+            app:popUpToInclusive="true"
             app:destination="@id/mainLensesFragment" />
-    </fragment>
+    </dialog>
     <fragment
         android:id="@+id/mainLensesFragment"
         android:name="ru.lenses.lensestoday.ui.fragments.MainLensesFragment"
@@ -30,6 +32,8 @@
         tools:layout="@layout/fragment_main_lenses" >
         <action
             android:id="@+id/action_mainLensesFragment_to_inviteFragment"
-            app:destination="@id/inviteFragment" />
+            app:destination="@id/inviteFragment"
+            app:popUpTo="@id/mainLensesFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 </navigation>

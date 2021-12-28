@@ -1,5 +1,6 @@
 package ru.lenses.lensestoday.ui.fragments
 
+import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,8 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
 import ru.lenses.lensestoday.R
@@ -16,10 +21,27 @@ import ru.lenses.lensestoday.databinding.FragmentAddLensesBinding
 import ru.lenses.lensestoday.room.Lenses
 
 @AndroidEntryPoint
-class AddLensesFragment : Fragment() {
+class AddLensesFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentAddLensesBinding
     private val viewModel by viewModels<AddLensesViewModel>()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.BottomSheet)
+    }
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val bottomSheetDialog = super.onCreateDialog(savedInstanceState)
+
+        if (bottomSheetDialog is BottomSheetDialog) {
+            bottomSheetDialog.behavior.apply {
+                skipCollapsed = true
+                state = BottomSheetBehavior.STATE_EXPANDED
+            }
+        }
+        return bottomSheetDialog
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
