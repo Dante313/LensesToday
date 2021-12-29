@@ -22,6 +22,10 @@ class MainLensesViewModel @Inject constructor(
 
     val readLensesLiveData: LiveData<Lenses> = lensesRepository.readLenses()
 
+    fun updateLenses(lenses: Lenses) = viewModelScope.launch(Dispatchers.IO) {
+        lensesRepository.updateLenses(lenses)
+    }
+
     fun deleteAllLenses() = viewModelScope.launch(Dispatchers.IO) {
         lensesRepository.deleteAllLenses()
     }

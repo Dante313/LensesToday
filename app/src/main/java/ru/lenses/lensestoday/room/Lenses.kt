@@ -17,5 +17,8 @@ data class Lenses(
     val lensesReplacePeriod: Int,
 
     @ColumnInfo(name = "lenses_already_wear")
-    val lensesAlreadyWear: Int
+    val lensesAlreadyWear: Int,
+
+    @ColumnInfo(name = "wearing_day")
+    val wearingDay: Int = 0,
 )

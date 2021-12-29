@@ -20,4 +20,9 @@
     <string name="are_you_want_to_delete_lenses">Вы уверены что хотите удалить линзы?</string>
     <string name="yes">Да</string>
     <string name="no">Нет</string>
+    <string name="are_you_wearing_lenses_today">Напомните,\nносите ли Вы сегодня линзы?</string>
+    <string name="decided_to_not_wear">Передумали носить?</string>
+    <string name="decided_to_wear">Решили носить?</string>
+    <string name="r_u_rly_decided_to_not_wear">Всё же передумали носить сегодня линзы?</string>
+    <string name="r_u_rly_decided_to_wear">Всё же решили носить сегодня линзы?</string>
 </resources>
