@@ -21,4 +21,7 @@ data class Lenses(
 
     @ColumnInfo(name = "wearing_day")
     val wearingDay: Int = 0,
+
+    @ColumnInfo(name = "wearing_status")
+    val isWearing: Boolean = false,
 )

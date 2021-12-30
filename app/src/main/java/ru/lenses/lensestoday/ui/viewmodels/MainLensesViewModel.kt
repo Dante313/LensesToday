@@ -1,4 +1,4 @@
-package ru.lenses.lensestoday.ui.fragments
+package ru.lenses.lensestoday.ui.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

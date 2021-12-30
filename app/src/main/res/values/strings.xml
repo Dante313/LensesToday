@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">LensesToday</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Линзы сегодня</string>
     <string name="add_lenses">Добавить линзы</string>
     <string name="delete_lenses">Удалить линзы</string>
     <string name="input_lenses_title">Название линз</string>
@@ -11,10 +10,13 @@
     <string name="already_wear">Уже носил: %1$d</string>
     <string name="create_lenses">Создать</string>
     <string name="cancel_creation">Отменить</string>
+    <string name="delete">Удалить</string>
+    <string name="wear_anyway">Носить</string>
     <string name="main_menu">Главное меню</string>
     <string name="lenses_today">Линзы сегодня</string>
     <string name="press_button_to_add_new_lenses">Линзы ещё не добавлены.\nНажмите \"+\" чтобы добавить новые линзы</string>
     <string name="empty_input_error">Поле не должно быть пустым!</string>
+    <string name="faulty_input_error">Срок ношения больше или равен сроку замены!</string>
     <string name="new_lenses">Новые линзы</string>
     <string name="deleting_lenses">Удаление линз</string>
     <string name="are_you_want_to_delete_lenses">Вы уверены что хотите удалить линзы?</string>
@@ -25,4 +27,6 @@
     <string name="decided_to_wear">Решили носить?</string>
     <string name="r_u_rly_decided_to_not_wear">Всё же передумали носить сегодня линзы?</string>
     <string name="r_u_rly_decided_to_wear">Всё же решили носить сегодня линзы?</string>
+    <string name="lenses_replacement">Замена линз</string>
+    <string name="warning_lenses_overwearing">Внимание! Линзы пора менять. Дальнейшее ношение вредит глазам. Перенашивание: %1$d дн.</string>
 </resources>

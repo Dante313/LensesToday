@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Today\'s lenses</string>
+    <string name="add_lenses">Add lenses</string>
+    <string name="delete_lenses">Delete lenses</string>
+    <string name="input_lenses_title">Lenses title</string>
+    <string name="input_replacement_period">Replacement period</string>
+    <string name="input_lenses_already_wear">Already wearing</string>
+    <string name="lenses_name">Title: %1$s</string>
+    <string name="replacement_period">Replacement period: %1$d</string>
+    <string name="already_wear">Already wearing: %1$d</string>
+    <string name="create_lenses">Create</string>
+    <string name="cancel_creation">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="wear_anyway">Wear</string>
+    <string name="main_menu">Main menu</string>
+    <string name="lenses_today">Today\'s lenses</string>
+    <string name="press_button_to_add_new_lenses">Lenses not added yet.\n Press \"+\" to add new lenses</string>
+    <string name="empty_input_error">Field cannot be empty!</string>
+    <string name="faulty_input_error">Wearing period is too long!</string>
+    <string name="new_lenses">New lenses</string>
+    <string name="deleting_lenses">Deleting lenses</string>
+    <string name="are_you_want_to_delete_lenses">Are you sure that you want to delete lenses?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="are_you_wearing_lenses_today">Remind me,\n are you wearing lenses today?</string>
+    <string name="decided_to_not_wear">Decided not to wear?</string>
+    <string name="decided_to_wear">Decided to wear?</string>
+    <string name="r_u_rly_decided_to_not_wear">So you are decided not to wear lenses today?</string>
+    <string name="r_u_rly_decided_to_wear">So you are decided to wear lenses today?</string>
+    <string name="lenses_replacement">Lenses replacement</string>
+    <string name="warning_lenses_overwearing">Warning! Change your lenses. Keep wearing them harm your eyes. Overwearing: %1$d d.</string>
+</resources>
